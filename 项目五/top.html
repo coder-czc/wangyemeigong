@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="js/lunbo.js"></script>
+    <link type="text/css" rel="styleSheet" href="lunbo.css" />
+    <style>
+        body {
+            margin: 0 auto;
+            height: auto;
+            width: 1400px;
+        }
+
+        .top {
+            width: 1400px;
+            height: 150px;
+            background-color: #ffffff;
+            padding-top: 15px;
+            padding-left: 0px;
+            border-color: #000000;
+            float: left;
+
+        }
+
+        .top .top-logo {
+            width: 1000px;
+            margin-left: 200px;
+            background-color: #ffffff;
+        }
+
+        .top .top-logo .left {
+            width: 348px;
+            height: 90px;
+            float: left;
+        }
+
+        .top .top-logo .right {
+            width: 300px;
+            height: 60px;
+            margin-top: 20px;
+            float: right;
+        }
+
+        .top .top-menu {
+            width: 1400px;
+            height: 40px;
+            background-color: #da0000;
+            /* margin-left: 200px; */
+        }
+
+        .top .top-menu .ul {
+            width: 1000px;
+            height: 40px;
+            margin-top: -15px;
+            margin-left: 200px;
+            float: left;
+        }
+
+        .top .top-menu .menu li {
+            /* width: 100px; */
+            height: 40px;
+            margin-top: 8px;
+            margin-left: 15px;
+            color: white;
+            list-style: none;
+            float: left;
+        }
+
+        .content .con0 {
+            width: 1000px;
+            height: auto;
+            /* margin-left: 200px; */
+            float: left;
+        }
+
+        .content .con1 .c1 {
+            width: 1000px;
+            height: auto;
+            margin-left: 200px;
+            float: left;
+        }
+
+        .content .con2 {
+            width: 1000px;
+            height: 160;
+            margin-left: 200px;
+        }
+
+        .content .con3 {
+            width: 1000px;
+            height: 820px;
+            margin-left: 200px;
+            margin-top: 20px;
+            /* border-style: solid; */
+            /* float: left; */
+            background-color: #f5f5f5;
+        }
+
+        .content .con3 .left {
+            width: 670px;
+            /* height: 850px; */
+            /* border-style: solid; */
+            float: left;
+        }
+
+        .content .con3 .left .img1 {
+            width: 60px;
+            height: 40px;
+            /* border-style: solid; */
+            float: left;
+            background-image: url(./images/标题符号.png);
+        }
+
+
+        .content .con3 .right {
+            width: 330px;
+            /* height: 850px; */
+            /* border-style: solid; */
+            float: left;
+            background-color: white;
+        }
+
+        .content .con3 .right .img2 {
+            width: 300px;
+            /* height: 40px; */
+            /* border-style: solid; */
+            float: left;
+            margin-left: 15px;
+            background-image: url(./images/右侧标题背景.png);
+            background-repeat: no-repeat;
+        }
+
+        .content .con4 {
+            width: 1000px;
+            height: 310px;
+            margin-left: 200px;
+            margin-top: 20px;
+            float: left;
+            background-color: #f5f5f4;
+        }
+
+        .content .con4 .img1 {
+            width: 25px;
+            height: 30px;
+            /* border-style: solid; */
+            float: left;
+            /* margin-left: 15px; */
+            background-image: url(./images/符号.png);
+            background-repeat: no-repeat;
+        }
+
+        .content .con4 .c4top {
+            width: 1000px;
+            height: 100px;
+            margin-top: -15px;
+            /* margin-left: 200px; */
+            float: left;
+            background-image: url("../images/btbg.png");
+            background-position: bottom;
+            background-repeat: no-repeat;
+        }
+
+        .content .con4 .c4top span {
+            width: 1000px;
+            height: 50px;
+            border-top: 1px solid #b4050c;
+            text-align: center;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .content .con4 .c4foot {
+            width: 1000px;
+            height: 285px;
+            float: left;
+        }
+
+        .content .con4 .c4foot .left {
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            margin-left: 12px;
+            float: left;
+        }
+
+        .content .con4 .c4foot .left .youxiu .a {
+            margin-top: 100px;
+        }
+
+        .content .con4 .c4foot .left .youxiu .b {
+            margin-left: 120px;
+        }
+
+        .content .con4 .c4foot .left .youxiu .xuxianleft {}
+
+
+        .content .con4 .c4foot .center {
+            width: 310px;
+            height: 245px;
+            background-color: #ffffff;
+            margin-left: 12px;
+            float: left;
+        }
+
+        .content .con4 .c4foot .right {
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            margin-left: 12px;
+            float: left;
+        }
+
+        .content .con5 {
+            width: 1000px;
+            height: 1073px;
+            margin-left: 200px;
+            margin-top: 20px;
+            /* border-style: solid; */
+            /* float: left; */
+            background-color: #f5f5f5;
+        }
+
+        .content .con5 .left {
+            width: 670px;
+            /* height: 850px; */
+            /* border-style: solid; */
+            float: left;
+        }
+
+        .content .con5 .left .img1 {
+            width: 30px;
+            height: 30px;
+            /* border-style: solid; */
+            float: left;
+            background-image: url(./images/logo3.png);
+            margin-top: 10px;
+        }
+
+
+        .content .con5 .right {
+            width: 330px;
+            /* height: 850px; */
+            /* border-style: solid; */
+            float: left;
+            background-color: white;
+        }
+
+        .content .con5 .right .img2 {
+            width: 300px;
+            /* height: 40px; */
+            /* border-style: solid; */
+            float: left;
+            margin-left: 15px;
+            background-image: url(./images/右侧标题背景.png);
+            background-repeat: no-repeat;
+        }
+
+        .foot {
+            height: 150px;
+            width: 1400px;
+            background-color: #ededed;
+            float: left;
+            border: 1px solid rgb(224, 9, 9);
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .test {
+            width: 248px;
+            height: 104px;
+            background-image: url(./images/标题背景.png);
+            position: absolute;
+            float: left;
+            top: 680px;
+            margin-left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="top-logo">
+            <span><img src="images/logo.jpg" alt=""></span>
+            <img src="images/fuwuwang.jpg" alt="">
+            <span class="right"><img src="images/zhuce.jpg" alt=""></span>
+        </div>
+        <div class="top-menu">
+            <ul class="menu">
+                <li style="margin-left: 170px;">首 页&nbsp;&nbsp;|</li>
+                <li>关于我们&nbsp;&nbsp;|</li>
+                <li>志愿者动态&nbsp;&nbsp;|</li>
+                <li>近期活动 &nbsp;&nbsp;|</li>
+                <li>需求信息发布&nbsp;&nbsp; |</li>
+                <li>志愿项目&nbsp;&nbsp; |</li>
+                <li>志愿风采 &nbsp;&nbsp;|</li>
+                <li>续写雷锋日记 &nbsp;&nbsp;|</li>
+                <li>知识与培训 &nbsp;&nbsp;|</li>
+                <li>四级体系</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="con0">
+            <img src="images/daohang.png" alt="">
+        </div>
+        <div class="con1">
+            <div class="c1">
+                <!-- <img style="float: left;" src="images/banner1.jpg" alt="" srcset=""> -->
+                <div class="box">
+                    <div class="box-1">
+                        <ul>
+                            <li>
+                                <img src="yasuo2.png" alt=""></img>
+                            </li>
+                            <li>
+                                <img src="锤石.png" alt=""></img>
+                            </li>
+                            <li>
+                                <img src="akl.png" alt=""></img>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box-2">
+                        <ul>
+            
+                        </ul>
+                    </div>
+                    <div class="box-3">
+                        <span class="prev">
+                            < </span>
+                                <span class="next"> > </span>
+                    </div>
+                </div>
+                <div style="width: 450px;float: left;">
+                    <div style="float: left;width: 450px;"><img style="float: left;" src="./images/hot.png">
+                        <h style="float: left;font-size: larger;color: red;margin-left: 40px;margin-top: 10px;">
+                            志愿者用青春的梦想装点校园</h>
+                    </div>
+                    <div>
+                        <h style="float: left;font-size: large;color: #101010;margin-top: 10px;margin-left: 20px;">
+                            爱鸟周高校巡回宣传活动来到xx学院,来自福建大学生命科学学院2011级的志愿者们分发宣传册、<h style="font-weight: 900;color: red;">[查看详细]</h>
+                        </h>
+                    </div>
+                </div>
+                <img style="float: left;margin-top: 10px;width: 450px;" src="images/xuxian.png" alt="">
+                <ul>
+                    <li style="margin-left: 40px;float: left;font-size: small;color: #464646;">
+                        城市义工与晨曦服务队联合提供便民服务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                    </li>
+                    <li style="margin-left: 40px;margin-top: 10px;float: left;font-size: small;color: #464646;">
+                        各个志愿者星级单位有限公司真诚邀请星级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                    </li>
+                    <li style="margin-left: 40px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                        为进一步繁荣河北省省会石家庄的文化娱乐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                    </li>
+                    <li style="margin-left: 40px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                        桥西区文明网繁荣河北省省会石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                    </li>
+                    <li style="margin-left: 40px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                        为进一步繁荣河北省省会石家庄的文化娱乐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                    </li>
+                    <li style="margin-left: 40px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                        桥西区文明网繁荣河北省省会石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                    </li>
+                </ul>
+                <h style="font-weight: 900;float: left;margin-left: 40px;color: red;">[更多志愿动态]</h>
+            </div>
+            <div class="con2"><img src="images/banner2.jpg"></div>
+            <div class="test">
+                <div style="float: left;
+    margin-top: 30px;
+    margin-left: 80px;">
+                    <h2 style="color: white;">志愿项目</h2>
+                </div>
+            </div>
+            <div class="con3">
+                <div class="left">
+                    <div
+                        style="height: 250px;width: 650px;margin-left: 10px;float: left;background-color: white;margin-top: 45px;">
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">志愿项目*关爱他人</h>
+                        <h style="float: left;margin-top: 20px;margin-left: 110px;color: gray;font-size: small;">
+                            敬老/爱幼/扶贫/助困/扶弱/助残</h>
+                        <img style="float: left;" src="images/xuxian.png" alt="">
+                        <img style="float: left;margin-top: 20px;" src="images/项目1.png">
+                        <h style="margin-top: 20px;margin-left: 20px;float: left;color: red;">爱鸟周高校巡回宣传活动来到xx学院</h>
+                        <h6 style="margin-top: 2px;margin-left: 20px;float: left;color: black;">
+                            来自xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h6>
+                        <ul>
+                            <li style="margin-left: 20px;float: left;font-size: small;color: #464646;">
+                                城市义工与晨曦服务队联合提供便民服务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color: #464646;">
+                                各个志愿者星级单位有限公司真诚邀请星级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                为进一步繁荣河北省省会石家庄的文化娱乐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                桥西区文明网繁荣河北省省会石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        style="height: 250px;width: 650px;margin-left: 10px;float: left;background-color: white;margin-top: 10px;">
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">志愿项目*关爱社会</h>
+                        <h style="float: left;margin-top: 20px;margin-left: 110px;color: gray;font-size: small;">
+                            文明礼仪/文化教育/社区服务/健康救助</h>
+                        <img style="float: left;" src="images/xuxian.png" alt="">
+                        <img style="float: left;margin-top: 20px;" src="images/项目2.png">
+                        <h style="margin-top: 20px;margin-left: 20px;float: left;color: red;">爱鸟周高校巡回宣传活动来到xx学院</h>
+                        <h6 style="margin-top: 2px;margin-left: 20px;float: left;color: black;">
+                            来自xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h6>
+                        <ul>
+                            <li style="margin-left: 20px;float: left;font-size: small;color: #464646;">
+                                城市义工与晨曦服务队联合提供便民服务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color: #464646;">
+                                各个志愿者星级单位有限公司真诚邀请星级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                为进一步繁荣河北省省会石家庄的文化娱乐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                桥西区文明网繁荣河北省省会石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="height: 250px;width: 650px;margin-left: 10px;float: left;background-color: white;">
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">志愿项目*关爱</h>
+                        <h style="float: left;margin-top: 20px;margin-left: 150px;color: gray;font-size: small;">
+                            环保宣传/植树造林/山川河流/动物保护</h>
+                        <img style="float: left;" src="images/xuxian.png" alt="">
+                        <img style="float: left;margin-top: 20px;" src="images/项目3.png">
+                        <h style="margin-top: 20px;margin-left: 20px;float: left;color: red;">爱鸟周高校巡回宣传活动来到xx学院</h>
+                        <h6 style="margin-top: 2px;margin-left: 20px;float: left;color: black;">
+                            来自xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h6>
+                        <ul>
+                            <li style="margin-left: 20px;float: left;font-size: small;color: #464646;">
+                                城市义工与晨曦服务队联合提供便民服务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color: #464646;">
+                                各个志愿者星级单位有限公司真诚邀请星级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                为进一步繁荣河北省省会石家庄的文化娱乐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                桥西区文明网繁荣河北省省会石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <div class="img2">
+
+                            <div style="width: 100px;float: left;">近期活动</div>
+                            <div style="margin-left: 130px;float: left;font-size: small;">更多>></div>
+                        </div>
+                        <div style="width: 300px;margin-left: 25px;float: left;background-color: white;">
+                            <img style="float: left;margin-top: 10px;" src="images/活动图片.png">
+                            <h style="width: 160px;;margin-top: 10px;float: left;color: black;font-size: small;">
+                                爱鸟周高校巡回宣传活动来到xx学院,来自福建大学生命科学学院2011级的志愿者们分发宣传册、<h style="font-weight: 900;">[查看详细]</h>
+                            </h>
+                            <img style="float: left;margin-top: 10px;width: 300px;" src="images/xuxian.png" alt="">
+                            <div style="float: left;">
+                                <li style="font-size: small;margin-top: 20px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                            </div>
+                            <img style="float: left;margin-top: 10px;width: 300px;" src="images/xuxian.png" alt="">
+                        </div>
+
+                    </div>
+                    <div>
+                        <div style="margin-top: 10px;" class="img2">
+
+                            <div style="width: 100px;float: left;">需求信息发布</div>
+                            <div style="margin-left: 130px;float: left;font-size: small;">更多>></div>
+                        </div>
+                        <div style="width: 300px;margin-left: 25px;float: left;background-color: white;">
+                            <div style="float: left;">
+                                <li style="font-size: small;margin-top: 30px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                            </div>
+                            <img style="float: left;margin-top: 10px;width: 300px;" src="images/xuxian.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="test" style="top: 1520px;margin-left: 600px;">
+                <div style="float: left;
+            margin-top: 30px;
+            margin-left: 70px;">
+                    <h2 style="color: white;">志愿者风采</h2>
+                </div>
+            </div>
+            <div class="con4">
+
+                <div
+                    style="height: 250px;width: 320px;margin-left: 10px;float: left;background-color: white;margin-top: 45px;">
+                    <div class="img1"></div>
+                    <h style="float: left;margin-top: 10px;margin-left: 10px;color: red;">优秀志愿者</h>
+                    <h style="float: left;margin-top: 10px;margin-left: 140px;font-size: small;">更多>></h>
+                    <img style="float: left;margin-top: 10px;width: 320px;" src="images/xuxian.png" alt="">
+
+                    <div style="width: 150px;height: 50px;float: left;margin-left: 10px;margin-top: 10px;">
+                        <img src="images/志愿者1.png" style="
+    float: left;
+">
+                        <h style="width:70;float:left;margin-left:10px;font-size:small;">卢本伟</h>
+                        <h style="width:50;float:left;margin-left:10px;font-size:small;">服务时间：2年</h>
+                    </div>
+                    <div style="width: 150px;height: 50px;float: left;margin-left: 10px;margin-top: 10px;">
+                        <img src="images/志愿者1.png" style="
+float: left;
+">
+                        <h style="width:70;float:left;margin-left:10px;font-size:small;">卢本伟</h>
+                        <h style="width:50;float:left;margin-left:10px;font-size:small;">服务时间：2年</h>
+                    </div>
+                    <div style="width: 150px;height: 50px;float: left;margin-left: 10px;margin-top: 10px;">
+                        <img src="images/志愿者1.png" style="
+float: left;
+">
+                        <h style="width:70;float:left;margin-left:10px;font-size:small;">卢本伟</h>
+                        <h style="width:50;float:left;margin-left:10px;font-size:small;">服务时间：2年</h>
+                    </div>
+                    <div style="width: 150px;height: 50px;float: left;margin-left: 10px;margin-top: 10px;">
+                        <img src="images/志愿者1.png" style="
+float: left;
+">
+                        <h style="width:70;float:left;margin-left:10px;font-size:small;">卢本伟</h>
+                        <h style="width:50;float:left;margin-left:10px;font-size:small;">服务时间：2年</h>
+                    </div>
+                    <div style="width: 150px;height: 50px;float: left;margin-left: 10px;margin-top: 10px;">
+                        <img src="images/志愿者1.png" style="
+float: left;
+">
+                        <h style="width:70;float:left;margin-left:10px;font-size:small;">卢本伟</h>
+                        <h style="width:50;float:left;margin-left:10px;font-size:small;">服务时间：2年</h>
+                    </div>
+                    <div style="width: 150px;height: 50px;float: left;margin-left: 10px;margin-top: 10px;">
+                        <img src="images/志愿者1.png" style="
+float: left;
+">
+                        <h style="width:70;float:left;margin-left:10px;font-size:small;">卢本伟</h>
+                        <h style="width:50;float:left;margin-left:10px;font-size:small;">服务时间：2年</h>
+                    </div>
+
+                </div>
+                <div
+                    style="height: 250px;width: 320px;margin-left: 10px;float: left;background-color: white;margin-top: 45px;">
+                    <div class="img1"></div>
+                    <h style="float: left;margin-top: 10px;margin-left: 10px;color: red;">优秀志愿服务组织</h>
+                    <h style="float: left;margin-top: 10px;margin-left: 90px;font-size: small;">更多>></h>
+                    <img style="float: left;margin-top: 10px;width: 320px;" src="images/xuxian.png" alt="">
+                    <ul>
+                        <li style="margin-top: 10px;">桥西区红十字会</li>
+                        <li style="margin-top: 10px;">伊利集团股份有限公司</li>
+                        <li style="margin-top: 10px;">桥西区红十字会</li>
+                        <li style="margin-top: 10px;">伊利集团股份有限公司</li>
+                        <li style="margin-top: 10px;">桥西区红十字会</li>
+                        <li style="margin-top: 10px;">伊利集团股份有限公司</li>
+                    </ul>
+                </div>
+                <div
+                    style="height: 250px;width: 320px;margin-left: 10px;float: left;background-color: white;margin-top: 45px;">
+                    <div class="img1"></div>
+                    <h style="float: left;margin-top: 10px;margin-left: 10px;color: red;">优秀志愿服务组织</h>
+                    <h style="float: left;margin-top: 10px;margin-left: 90px;font-size: small;">更多>></h>
+                    <img style="float: left;margin-top: 10px;width: 320px;" src="images/xuxian.png" alt="">
+                    <div style="float: left;/* height: 100px; */width: 150px;margin-top: 2px;">
+                        <div style="width: 120px;float: left;border-style: groove;margin-left: 20px;height: 70p;">
+                            <img src="images/伊利.png" style="
+    margin-left: 25px;
+">
+                        </div>
+                        <h style="
+    float: left;
+    margin-left: 18px;
+    /* margin-top: 5px; */
+    font-size:small;
+">伊利集团股份有限公司</h>
+                    </div>
+
+                    <div style="float: left;/* height: 100px; */width: 150px;margin-top: 2px;">
+                        <div style="width: 120px;height: 63px;float: left;border-style: groove;margin-left: 20px;">
+                            <img src="images/红十字.png" style="
+    margin-left: 15px;
+">
+                        </div>
+                        <h style="
+    float: left;
+    margin-left: 40px;
+    margin-top: 5px;
+    font-size:small;
+">中国红十字会</h>
+                    </div>
+
+                    <div style="float: left;/* height: 100px; */width: 150px;margin-top: 10px;">
+                        <div style="width: 120px;float: left;border-style: groove;margin-left: 20px;">
+                            <img src="images/伊利.png" style="
+    margin-left: 25px;
+">
+                        </div>
+                        <h style="
+    float: left;
+    margin-left: 18px;
+    margin-top: 5px;
+    font-size:small;
+">伊利集团股份有限公司</h>
+                    </div>
+
+                    <div style="float: left;/* height: 100px; */width: 150px;margin-top: 10px;">
+                        <div style="width: 120px;height: 63px;float: left;border-style: groove;margin-left: 20px;">
+                            <img src="images/红十字.png" style="
+    margin-left: 15px;
+">
+                        </div>
+                        <h style="
+    float: left;
+    margin-left: 40px;
+    margin-top: 5px;
+    font-size:small;
+">中国红十字会</h>
+                    </div>
+                </div>
+            </div>
+            <div class="con2"><img src="images/wozihao.png"></div>
+            <div class="test" style="top: 2015px;margin-left: 400px;">
+                <div style="float: left;
+            margin-top: 30px;
+            margin-left: 70px;">
+                    <h3 style="color: white;">续写雷锋日记</h3>
+                </div>
+            </div>
+            <div class="con5">
+                <div class="left">
+                    <div
+                        style="height: 250px;width: 650px;margin-left: 10px;float: left;background-color: white;margin-top: 45px;">
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">党员志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">助残志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">巾帼志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">老年志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">青年志愿者</h>
+                        <img style="float: left;" src="images/xuxian.png" alt="">
+                        <img style="float: left;margin-top: 20px;" src="images/日记1.png">
+                        <h style="margin-top: 20px;margin-left: 20px;float: left;color: red;">爱鸟周高校巡回宣传活动来到xx学院</h>
+                        <h6 style="margin-top: 2px;margin-left: 20px;float: left;color: black;">
+                            来自xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h6>
+                        <ul>
+                            <li style="margin-left: 20px;float: left;font-size: small;color: #464646;">
+                                城市义工与晨曦服务队联合提供便民服务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color: #464646;">
+                                各个志愿者星级单位有限公司真诚邀请星级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                为进一步繁荣河北省省会石家庄的文化娱乐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                桥西区文明网繁荣河北省省会石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        style="height: 250px;width: 650px;margin-left: 10px;float: left;background-color: white;margin-top: 10px;">
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">党员志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">助残志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">巾帼志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">老年志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">青年志愿者</h>
+                        <img style="float: left;" src="images/xuxian.png" alt="">
+                        <img style="float: left;margin-top: 20px;" src="images/日记2.png">
+                        <h style="margin-top: 20px;margin-left: 20px;float: left;color: red;">爱鸟周高校巡回宣传活动来到xx学院</h>
+                        <h6 style="margin-top: 2px;margin-left: 20px;float: left;color: black;">
+                            来自xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h6>
+                        <ul>
+                            <li style="margin-left: 20px;float: left;font-size: small;color: #464646;">
+                                城市义工与晨曦服务队联合提供便民服务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color: #464646;">
+                                各个志愿者星级单位有限公司真诚邀请星级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                为进一步繁荣河北省省会石家庄的文化娱乐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                桥西区文明网繁荣河北省省会石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        style="height: 250px;width: 650px;margin-left: 10px;float: left;background-color: white;margin-top: 10px;">
+                        <h style="float: left;margin-top: 20px;color: red;">党员志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">助残志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">巾帼志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">老年志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">青年志愿者</h>
+                        <img style="float: left;" src="images/xuxian.png" alt="">
+                        <img style="float: left;margin-top: 20px;" src="images/日记3.png">
+                        <h style="margin-top: 20px;margin-left: 20px;float: left;color: red;">爱鸟周高校巡回宣传活动来到xx学院</h>
+                        <h6 style="margin-top: 2px;margin-left: 20px;float: left;color: black;">
+                            来自xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h6>
+                        <ul>
+                            <li style="margin-left: 20px;float: left;font-size: small;color: #464646;">
+                                城市义工与晨曦服务队联合提供便民服务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color: #464646;">
+                                各个志愿者星级单位有限公司真诚邀请星级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                为进一步繁荣河北省省会石家庄的文化娱乐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                桥西区文明网繁荣河北省省会石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        style="height: 250px;width: 650px;margin-left: 10px;float: left;background-color: white;margin-top: 10px;">
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">党员志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">助残志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">巾帼志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">老年志愿者｜</h>
+                        <div class="img1"></div>
+                        <h style="float: left;margin-top: 20px;color: red;">青年志愿者</h>
+                        <img style="float: left;" src="images/xuxian.png" alt="">
+                        <img style="float: left;margin-top: 20px;" src="images/日记4.png">
+                        <h style="margin-top: 20px;margin-left: 20px;float: left;color: red;">爱鸟周高校巡回宣传活动来到xx学院</h>
+                        <h6 style="margin-top: 2px;margin-left: 20px;float: left;color: black;">
+                            来自xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h6>
+                        <ul>
+                            <li style="margin-left: 20px;float: left;font-size: small;color: #464646;">
+                                城市义工与晨曦服务队联合提供便民服务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color: #464646;">
+                                各个志愿者星级单位有限公司真诚邀请星级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                为进一步繁荣河北省省会石家庄的文化娱乐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                            <li style="margin-left: 20px;margin-top: 10px;float: left;font-size: small;color:#464646;">
+                                桥西区文明网繁荣河北省省会石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-06-21
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <div class="img2">
+
+                            <div style="width: 100px;float: left;">四级体系</div>
+                            <div style="margin-left: 130px;float: left;font-size: small;">更多>></div>
+                        </div>
+                        <div style="width: 300px;margin-left: 25px;float: left;background-color: white;">
+                            <img style="float: left;margin-top: 10px;" src="images/体系图.png">
+                            <h style="width: 160px;;margin-top: 10px;margin-left: 50px;float: left;color: black;">
+                                桥西志愿服务四级体系</h>
+                            </h>
+                            <img style="float: left;margin-top: 10px;width: 300px;" src="images/xuxian.png" alt="">
+                        </div>
+
+                    </div>
+                    <div>
+                        <div style="margin-top: 10px;" class="img2">
+
+                            <div style="width: 100px;float: left;">知识与培训</div>
+                            <div style="margin-left: 130px;float: left;font-size: small;">更多>></div>
+                        </div>
+                        <div style="width: 300px;margin-left: 25px;float: left;background-color: white;">
+                            <img style="float: left;margin-top: 10px;" src="images/学习.png">
+                            <h style="width: 120px;;margin-top: 10px;float: left;color: black;font-size: small;">
+                                爱鸟周高校巡回宣传活动来到xx学院,来自福建大学生命科学学院2011级的志愿者们分发宣传册、<h style="font-weight: 900;">[查看详细]</h>
+                            </h>
+                            <img style="float: left;margin-top: 10px;width: 300px;" src="images/xuxian.png" alt="">
+                            <div style="float: left;">
+                                <li style="font-size: small;margin-top: 30px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+                                <li style="font-size: small;margin-top: 10px;">为进一步繁荣河北省省会石家庄市的文化娱乐</li>
+
+                            </div>
+                            <img style="float: left;margin-top: 10px;width: 300px;" src="images/xuxian.png" alt="">
+                        </div>
+
+                    </div>
+                    <div>
+                        <div style="margin-top: 10px;" class="img2">
+
+                            <div style="width: 100px;float: left;">志愿微语</div>
+                            <div style="margin-left: 130px;float: left;font-size: small;">更多>></div>
+                        </div>
+                        <div style="width: 300px;margin-left: 25px;float: left;background-color: white;">
+                            <img style="float: left;margin-top: 10px;" src="images/加关注.png">
+                            <img style="float: left;margin-top: 10px;width: 300px;" src="images/xuxian.png" alt="">
+                            <div style="float: left;margin-top: 10px;">
+                                <img src="images/微博截图.jpg" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="con6"></div>
+        </div>
+        <div class="foot">
+            <div>
+                <img style="width:50px;height:50px;margin-left: 680px;" src="images/logo2.png">
+            </div>
+            <div style="
+        margin-left: 480px;
+    ">
+                <h>主办单位:中共石家庄宣传委员会&nbsp;&nbsp;承办单位：石家庄桥西区精神文明建设委员会</h>
+            </div>
+            <div style="
+    margin-left: 600px;
+">
+                <h>地址:xx市xx县&nbsp;&nbsp;电话：1111111111</h>
+            </div>
+            <div style="
+margin-left: 650px;
+">
+                <h>技术支持:xxx传媒有限公司</h>
+            </div>
+        </div>
+</body>
+
+</html>
